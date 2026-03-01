@@ -440,7 +440,7 @@ Standard deviation drops from **~200%** with 1 vnode to **~10%** with 150 vnodes
 
 ---
 
-## ⚠️ Limitations
+##  Limitations
 
 | Limitation | Details |
 |---|---|
@@ -464,28 +464,10 @@ Standard deviation drops from **~200%** with 1 vnode to **~10%** with 150 vnodes
 - [ ] **Circuit breaker** — stop routing to failing backends temporarily
 - [ ] **Connection pooling** — reuse TCP connections to backends
 
-### v0.3 — Features
-- [ ] **Weighted virtual nodes** — give powerful servers more vnodes
-- [ ] **HTTPS support** — `hyper-rustls` for TLS backends
-- [ ] **Admin authentication** — API key or JWT for `/admin/*`
-- [ ] **Prometheus metrics** — expose `/metrics` endpoint
-- [ ] **WebSocket proxying** — handle `Upgrade: websocket`
-
-### v0.4 — Production
-- [ ] **Persistent ring state** — save/restore ring from disk on restart
-- [ ] **Distributed mode** — gossip protocol to sync ring across proxy instances
-- [ ] **Hot config reload** — watch `config.toml` for changes
-- [ ] **Request tracing** — propagate trace IDs through `X-Trace-Id` headers
-- [ ] **Docker image** — multi-stage Dockerfile
-
-### v1.0 — Observable
-- [ ] **Web dashboard** — React UI showing the ring visually (like the ByteByteGo diagram)
-- [ ] **Load test harness** — built-in `wrk`-style benchmarking endpoint
-- [ ] **Chaos mode** — randomly kill backends to test redistribution
 
 ---
 
-## 🏭 Real-World Use Cases
+##  Use Cases
 
 ### 1. Distributed Cache (Primary Use Case)
 Hash by cache key. When a cache node joins, only its share of keys miss — the rest stay warm.
@@ -518,7 +500,7 @@ Place backends in different regions. Use geographic hash keys to keep users clos
 
 ---
 
-## ✅ Key Properties Proven By Tests
+##  Key Properties By Tests
 
 ```
 cargo test -- --nocapture
